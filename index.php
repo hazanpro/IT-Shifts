@@ -11,7 +11,7 @@
     </head>
     <body>
         <?php
-            echo 'Welcome to IT-Shifts!', PHP_EOL;
+            echo 'Welcome to IT-Shifts!', env('DB_HOST'), PHP_EOL;
         ?>
     </body>
 </html>
