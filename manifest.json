@@ -1,0 +1,42 @@
+{
+    "short_name": "IT-Shifts",
+    "name": "IT-Shifts WebApp",
+    "icons":
+    [
+        {
+            "src": "/icons/calendar-16.png",
+            "type": "image/png",
+            "sizes": "16x16"
+        },
+        {
+            "src": "/icons/calendar-32.png",
+            "type": "image/png",
+            "sizes": "32x32"
+        },
+        {
+            "src": "/icons/calendar-48.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "/icons/calendar-128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "/icons/calendar-256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "/icons/calendar-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/index.php",
+    "background_color": "#F5F5F5",
+    "display": "standalone",
+    "theme_color": "#F5F5F5",
+    "orientation": "portrait-primary"
+}
