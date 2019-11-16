@@ -12,11 +12,8 @@
     <body>
         <?php
             session_start();
-
-            if (isset($_SESSION['Username']))
-                echo 'Welcome back ' . $_SESSION['Username'] . ', Click <a href="signout.php">here</a> to sign out.' . PHP_EOL;
-            else
-                header('Location: signin.php');
+            unset($_SESSION['Username']);
+            header('Location: signin.php');
         ?>
     </body>
 </html>
