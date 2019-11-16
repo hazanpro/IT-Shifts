@@ -1,3 +1,28 @@
+<?php
+    session_start();
+    
+    if (isset($_SESSION['ID']))
+        header('Location: index.php');
+    else if (isset($_POST['Username']) && isset($_POST['Password']))
+    {
+        $mysqli = new mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);
+        $username = $mysqli->real_escape_string($_POST['Username']);
+        $password = $mysqli->real_escape_string($_POST['Password']);
+        $query = "SELECT `ID` FROM `Employees` WHERE `Username` = '$username' AND `Password` = '$password'";
+
+        if ($result = $mysqli->query($query))
+        {
+            $row = $mysqli->fetch_row($result);
+            $_SESSION['ID'] = $row['ID'];
+        }
+
+        $result->free_result();
+        $mysqli->close();
+        header('Location: index.php');
+        exit();
+    }
+?>
+
 <!doctype html>
 <html>
     <head>
@@ -26,15 +51,6 @@
         <title>IT-Shifts</title>
     </head>
     <body class="text-center">
-        <?php
-            session_start();
-
-            if (isset($_POST['Username']) && $_POST['Username'] == 'System')
-            {
-                $_SESSION['Username'] = $_POST['Username'];
-                header('Location: index.php');
-            }
-        ?>
         <form class="form-signin" method="post">
             <img src="images/logo.png" width="100%" height="100%">
             <div class="input-group mt-2 mb-2">

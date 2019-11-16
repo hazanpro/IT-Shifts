@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    
+    if (!isset($_SESSION['ID']))
+        header('Location: signin.php');
+?>
+
 <!doctype html>
 <html>
     <head>
@@ -11,12 +18,7 @@
     </head>
     <body>
         <?php
-            session_start();
-
-            if (isset($_SESSION['Username']))
-                echo 'Welcome back ' . $_SESSION['Username'] . ', Click <a href="signout.php">here</a> to sign out.' . PHP_EOL;
-            else
-                header('Location: signin.php');
+            echo 'Welcome back ' . $_SESSION['Username'] . ', Click <a href="signout.php">here</a> to sign out.' . PHP_EOL;
         ?>
     </body>
 </html>
