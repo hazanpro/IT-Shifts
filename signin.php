@@ -36,14 +36,14 @@
             }
         ?>
         <form class="form-signin" method="post">
-            <img src="img/logo.png" width="100%" height="100%">
+            <img src="images/logo.png" width="100%" height="100%">
             <div class="input-group mt-2 mb-2">
                 <div class="input-group-prepend">
                     <span class="input-group-text" data-toggle="tooltip" data-placement="left" title="Active Directory">
                         <i class="fas fa-user"></i>
                     </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Username" required>
+                <input type="text" name="Username" class="form-control" placeholder="Username" required>
             </div>
             <div class="input-group mt-2 mb-2">
                 <div class="input-group-prepend">
@@ -51,7 +51,7 @@
                         <i class="fas fa-unlock-alt"></i>
                     </span>
                 </div>
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input type="password" name="Password" class="form-control" placeholder="Password" required>
                 <div class="input-group-append">
                     <button class="input-group-text" data-toggle="tooltip" data-placement="right" title="Password Recovery" onclick="OutlookWebApp();">
                         <i class="fas fa-envelope-open-text"></i>
