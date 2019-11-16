@@ -12,17 +12,20 @@
 
         if ($result = $mysqli->query($query))
         {
-            $row = $mysqli->fetch_row($result);
+            $row = $result->fetch_assoc();
             $_SESSION['ID'] = $row['ID'];
         }
 
         $result->free_result();
         $mysqli->close();
-        header('Location: index.php');
-        exit();
+
+        if (isset($_SESSION['ID']))
+        {
+            header('Location: index.php');
+            exit();
+        }
     }
 ?>
-
 <!doctype html>
 <html>
     <head>

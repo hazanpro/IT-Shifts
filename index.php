@@ -1,6 +1,6 @@
 <?php
     session_start();
-    
+
     if (!isset($_SESSION['ID']))
         header('Location: signin.php');
 ?>
@@ -18,7 +18,7 @@
     </head>
     <body>
         <?php
-            echo 'Welcome back ' . $_SESSION['Username'] . ', Click <a href="signout.php">here</a> to sign out.' . PHP_EOL;
+            echo 'Welcome back ' . $_SESSION['ID'] . ', Click <a href="signout.php">here</a> to sign out.' . PHP_EOL;
         ?>
     </body>
 </html>
